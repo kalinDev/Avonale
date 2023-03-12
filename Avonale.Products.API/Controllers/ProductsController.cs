@@ -23,7 +23,7 @@ public class ProductController : ApiController
         _productQueries = productQueries;
     }
 
-    [HttpGet("{guid:int}")]
+    [HttpGet("{id}")]
     public async Task<ActionResult<ProductDetailedDTO>> FindOneAsync(Guid id)
     {
         var product = await _productQueries.FindOneAsync(id);
@@ -38,7 +38,7 @@ public class ProductController : ApiController
     public async Task<ActionResult> AddAsync([FromBody] RegisterProductCommand product)
         => CustomResponse(await _mediatorHandler.SendCommand(product));
 
-    [HttpDelete("{guid:int}")]
+    [HttpDelete("{id}")]
     public async Task<ActionResult> RemoveAsync(Guid id, CancellationToken cancellationToken)
     {
         var command = new RemoveProductCommand(id);
@@ -47,7 +47,4 @@ public class ProductController : ApiController
         return CustomResponse();
     }
 
-    [HttpPost("purchase")]
-    public async Task<ActionResult> PurchaseAsync([FromBody] PurchaseProductCommand command)
-        => CustomResponse(await _mediatorHandler.SendCommand(command));
 }

@@ -8,6 +8,8 @@ public class AutoMapperProfile : Profile
 {
     public AutoMapperProfile()
     {
-        CreateMap<ProductDetailedDTO, Product>();
+        CreateMap<Product, ProductDetailedDTO>();
+        CreateMap<Product, ProductDTO>();
+
     }
 }

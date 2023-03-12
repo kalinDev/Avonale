@@ -1,3 +1,3 @@
 ﻿namespace Avonale.Products.Shared.Core.DTO;
 
-public record ProductDTO(string Name, decimal Price, int StockQuantity);
+public record ProductDTO(Guid Id, string Name, decimal Price, int StockQuantity);
