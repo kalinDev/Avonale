@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+    <PropertyGroup>
+        <TargetFramework>net6.0</TargetFramework>
+        <Nullable>disable</Nullable>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Avonale.MessageBus\Avonale.MessageBus.csproj" />
+      <ProjectReference Include="..\Avonale.Payment.Infra.CrossCutting.IoC\Avonale.Payment.Infra.CrossCutting.IoC.csproj" />
+      <ProjectReference Include="..\Avonale.Payment.Service\Avonale.Payment.Service.csproj" />
+      <ProjectReference Include="..\Core\Core.csproj" />
+    </ItemGroup>
+
+</Project>

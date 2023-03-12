@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net6.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>disable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Avonale.Products.Application\Avonale.Products.Application.csproj" />
+      <ProjectReference Include="..\Avonale.Products.Data\Avonale.Products.Data.csproj" />
+    </ItemGroup>
+
+</Project>
