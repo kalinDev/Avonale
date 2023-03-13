@@ -48,6 +48,27 @@ public class ProductQueriesTest
             result.Should().BeEquivalentTo(productDetailedDtoExpected);
         }
         
+        
+        [Fact(DisplayName = "FindOneAsync Should Return null When Product Does not Exists")]
+        [Trait("Queries", "Product")]
+        public async void FindOneAsync_ShouldReturnNull_WhenProductDoesNotExists()
+        {
+            // Arrange
+            
+            var productId = Guid.NewGuid();
+            Product product = null;
+            
+            var productDetailedDtoExpected = _mapper.Map<ProductDetailedDTO>(product);
+            _productRepositoryMock.Setup(x => x.FindByIdAsync(productId)).ReturnsAsync(product);
+
+            // Act
+            var result = await _productQueries.FindOneAsync(productId);
+
+            // Assert
+            result.Should().BeNull();
+            result.Should().BeEquivalentTo(productDetailedDtoExpected);
+        }
+        
         [Fact(DisplayName = "FindAsync Should Return IEnumerable of ProductDTO When Products Exists")]
         [Trait("Queries", "Product")]
         public async void FindAsync_ShouldReturnIEnumerableOfProductDTO_WhenProductsExists()
