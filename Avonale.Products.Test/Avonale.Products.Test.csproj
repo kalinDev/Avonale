@@ -26,6 +26,7 @@
     </ItemGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\Avonale.Products.API\Avonale.Products.API.csproj" />
       <ProjectReference Include="..\Avonale.Products.Application\Avonale.Products.Application.csproj" />
       <ProjectReference Include="..\Avonale.Products.Domain\Avonale.Products.Domain.csproj" />
     </ItemGroup>
