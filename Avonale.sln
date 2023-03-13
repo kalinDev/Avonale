@@ -38,6 +38,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Avonale.Payment.Application
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Avonale.Payment.Infra.CrossCutting.IoC", "Avonale.Payment.Infra.CrossCutting.IoC\Avonale.Payment.Infra.CrossCutting.IoC.csproj", "{FDF506F7-41BB-430C-B86B-76A82F6DDE6B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Avonale.Products.Test", "Avonale.Products.Test\Avonale.Products.Test.csproj", "{F4DAA782-3D41-4811-BD64-43C768B0E0E8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -92,6 +94,10 @@ Global
 		{FDF506F7-41BB-430C-B86B-76A82F6DDE6B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FDF506F7-41BB-430C-B86B-76A82F6DDE6B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FDF506F7-41BB-430C-B86B-76A82F6DDE6B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F4DAA782-3D41-4811-BD64-43C768B0E0E8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F4DAA782-3D41-4811-BD64-43C768B0E0E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F4DAA782-3D41-4811-BD64-43C768B0E0E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F4DAA782-3D41-4811-BD64-43C768B0E0E8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{C427BF34-024A-4592-AF7D-AB0CF7954A16} = {CE316781-13A3-4BA4-87EA-B0F2D240CA30}
@@ -112,5 +118,6 @@ Global
 		{8535CD20-78D7-4AA5-9307-DAE637ADFA58} = {AA49698B-80A8-4E07-821A-2D3A47C8A2DE}
 		{CCF94FEA-43AF-4C1B-A72C-ABE5B1DC60DE} = {C4B27AC3-F663-47B9-BB06-982C5B66B936}
 		{FDF506F7-41BB-430C-B86B-76A82F6DDE6B} = {C4B27AC3-F663-47B9-BB06-982C5B66B936}
+		{F4DAA782-3D41-4811-BD64-43C768B0E0E8} = {4ED1879A-B68C-478C-9967-314789582B04}
 	EndGlobalSection
 EndGlobal
