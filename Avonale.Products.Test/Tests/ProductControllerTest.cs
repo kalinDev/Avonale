@@ -10,7 +10,7 @@ using Moq;
 
 namespace Avonale.Products.Test.Tests;
 
-public class ProductControllerTests
+public class ProductControllerTest
 {
     private readonly Fixture _fixture;
     private readonly Mock<IMediatorHandler> _mediatorHandlerMock;
@@ -18,7 +18,7 @@ public class ProductControllerTests
     private readonly Mock<INotifier> _notifierMock;
     private readonly ProductController _controller;
 
-    public ProductControllerTests()
+    public ProductControllerTest()
     {
         _fixture = new Fixture();
         _mediatorHandlerMock = new Mock<IMediatorHandler>();
@@ -48,8 +48,8 @@ public class ProductControllerTests
     {
         // Arrange
         var productId = Guid.NewGuid();
-        var productDetailedDTO = _fixture.Create<ProductDetailedDTO>();
-        _productQueriesMock.Setup(x => x.FindOneAsync(productId)).ReturnsAsync(productDetailedDTO);
+        var productDetailedDto = _fixture.Create<ProductDetailedDTO>();
+        _productQueriesMock.Setup(x => x.FindOneAsync(productId)).ReturnsAsync(productDetailedDto);
 
         // Act
         var result = await _controller.FindOneAsync(productId);
@@ -57,6 +57,24 @@ public class ProductControllerTests
         // Assert
         result.Should().BeOfType<ActionResult<ProductDetailedDTO>>();
 
+    }
+    
+    [Fact(DisplayName = "FindAsync Should Return IEnumerableProductDto When Product Exists")]
+    [Trait("Queries", "Product")]
+    public async Task FindOneAsync_ShouldIEnumerableProductDTO_WhenProductExists()
+    {
+        // Arrange
+        var productDtos = _fixture.Build<ProductDTO>()
+            .CreateMany(3);
+        _productQueriesMock.Setup(x => x.FindAsync()).ReturnsAsync(productDtos);
+
+        // Act
+        var result = await _controller.FindAsync();
+
+        // Assert
+        var okResult = result.Result.Should().BeOfType<OkObjectResult>().Subject;
+        var productDtoList = okResult.Value.Should().BeAssignableTo<IEnumerable<ProductDTO>>().Subject;
+        productDtoList.Should().HaveCount(3);
     }
 
 }
